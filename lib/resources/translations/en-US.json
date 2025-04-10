@@ -1,0 +1,9 @@
+{
+    "spent": "Spent",
+    "time_period": {
+        "today": "Today",
+        "this_week": "This week",
+        "this_month": "This month",
+        "this_year": "This year"
+    }
+}

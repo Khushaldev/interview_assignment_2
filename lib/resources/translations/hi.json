@@ -1,0 +1,9 @@
+{
+    "spent": "खर्च किये",
+    "time_period": {
+        "today": "आज",
+        "this_week": "यह सप्ताह",
+        "this_month": "यह महीना",
+        "this_year": "यह वर्ष"
+    }
+}
