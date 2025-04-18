@@ -21,7 +21,7 @@ class AppRouter extends RootStackRouter {
           page: EmptyShellRoute('home-tab'),
           children: [
             AutoRoute(path: '', page: HomeRoute.page),
-            AutoRoute(path: 'add-transaction', page: AddTransactionRoute.page),
+            AutoRoute(path: 'add-expense', page: AddExpenseRoute.page),
           ],
         ),
         AutoRoute(
@@ -38,6 +38,5 @@ class AppRouter extends RootStackRouter {
         ),
       ],
     ),
-    // RedirectRoute(path: '*', redirectTo: '/'),
   ];
 }

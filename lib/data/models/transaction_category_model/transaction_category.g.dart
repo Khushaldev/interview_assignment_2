@@ -10,9 +10,7 @@ _TransactionCategory _$TransactionCategoryFromJson(Map<String, dynamic> json) =>
     _TransactionCategory(
       categoryId: json['categoryId'] as String,
       name: json['name'] as String,
-      type: json['type'] as String,
       icon: json['icon'] as String,
-      userId: json['userId'] as String,
     );
 
 Map<String, dynamic> _$TransactionCategoryToJson(
@@ -20,7 +18,5 @@ Map<String, dynamic> _$TransactionCategoryToJson(
     <String, dynamic>{
       'categoryId': instance.categoryId,
       'name': instance.name,
-      'type': instance.type,
       'icon': instance.icon,
-      'userId': instance.userId,
     };

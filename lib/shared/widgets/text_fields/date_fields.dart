@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:interview_assignment_app/core/utils/extensions/theme_extension.dart';
 import 'package:interview_assignment_app/shared/widgets/text_fields/primary_text_field.dart';
+
+import '../../../theme/colors.dart';
 
 Map<int, String> months = <int, String>{
   1: "January",
@@ -41,16 +44,34 @@ class DatePickerField extends StatelessWidget {
     final String day = "${selectedDate?.day ?? 1}";
     final String month = months[selectedDate?.month ?? 1] ?? months.entries.first.value;
     final String year = "${selectedDate?.year ?? 1999}";
-    return PrimaryTextField(
-      onTap: () => _selectDate(context),
-      readOnly: true,
-      hasTitleOutside: true,
-      labelText: 'Date',
-      prefixIcon: Icon(Icons.calendar_today, size: 16),
-      controller: TextEditingController(
-        text: selectedDate != null ? "$day $month, $year" : "",
-      ),
-      validator: (value) => selectedDate == null ? "Select a date" : null,
+    final color = context.theme.brightness == Brightness.dark
+        ? AppColors.darkOnPrimary
+        : AppColors.lightOnBackground;
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          'Date',
+          style: context.subtitle1.copyWith(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        SizedBox(
+          width: 200,
+          child: PrimaryTextField(
+            onTap: () => _selectDate(context),
+            readOnly: true,
+            style: context.subtitle2.copyWith(
+              color: color,
+            ),
+            prefixIcon: Icon(Icons.calendar_today, size: 16),
+            controller: TextEditingController(
+              text: selectedDate != null ? "$day $month, $year" : "",
+            ),
+            validator: (value) => selectedDate == null ? "Select a date" : null,
+          ),
+        ),
+      ],
     );
   }
 }

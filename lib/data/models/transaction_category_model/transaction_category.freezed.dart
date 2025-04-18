@@ -17,9 +17,7 @@ T _$identity<T>(T value) => value;
 mixin _$TransactionCategory {
   String get categoryId;
   String get name;
-  String get type;
   String get icon;
-  String get userId;
 
   /// Create a copy of TransactionCategory
   /// with the given fields replaced by the non-null parameter values.
@@ -40,19 +38,16 @@ mixin _$TransactionCategory {
             (identical(other.categoryId, categoryId) ||
                 other.categoryId == categoryId) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.type, type) || other.type == type) &&
-            (identical(other.icon, icon) || other.icon == icon) &&
-            (identical(other.userId, userId) || other.userId == userId));
+            (identical(other.icon, icon) || other.icon == icon));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, categoryId, name, type, icon, userId);
+  int get hashCode => Object.hash(runtimeType, categoryId, name, icon);
 
   @override
   String toString() {
-    return 'TransactionCategory(categoryId: $categoryId, name: $name, type: $type, icon: $icon, userId: $userId)';
+    return 'TransactionCategory(categoryId: $categoryId, name: $name, icon: $icon)';
   }
 }
 
@@ -62,12 +57,7 @@ abstract mixin class $TransactionCategoryCopyWith<$Res> {
           TransactionCategory value, $Res Function(TransactionCategory) _then) =
       _$TransactionCategoryCopyWithImpl;
   @useResult
-  $Res call(
-      {String categoryId,
-      String name,
-      String type,
-      String icon,
-      String userId});
+  $Res call({String categoryId, String name, String icon});
 }
 
 /// @nodoc
@@ -85,9 +75,7 @@ class _$TransactionCategoryCopyWithImpl<$Res>
   $Res call({
     Object? categoryId = null,
     Object? name = null,
-    Object? type = null,
     Object? icon = null,
-    Object? userId = null,
   }) {
     return _then(_self.copyWith(
       categoryId: null == categoryId
@@ -98,17 +86,9 @@ class _$TransactionCategoryCopyWithImpl<$Res>
           ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      type: null == type
-          ? _self.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
       icon: null == icon
           ? _self.icon
           : icon // ignore: cast_nullable_to_non_nullable
-              as String,
-      userId: null == userId
-          ? _self.userId
-          : userId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -118,11 +98,7 @@ class _$TransactionCategoryCopyWithImpl<$Res>
 @JsonSerializable()
 class _TransactionCategory implements TransactionCategory {
   const _TransactionCategory(
-      {required this.categoryId,
-      required this.name,
-      required this.type,
-      required this.icon,
-      required this.userId});
+      {required this.categoryId, required this.name, required this.icon});
   factory _TransactionCategory.fromJson(Map<String, dynamic> json) =>
       _$TransactionCategoryFromJson(json);
 
@@ -131,11 +107,7 @@ class _TransactionCategory implements TransactionCategory {
   @override
   final String name;
   @override
-  final String type;
-  @override
   final String icon;
-  @override
-  final String userId;
 
   /// Create a copy of TransactionCategory
   /// with the given fields replaced by the non-null parameter values.
@@ -161,19 +133,16 @@ class _TransactionCategory implements TransactionCategory {
             (identical(other.categoryId, categoryId) ||
                 other.categoryId == categoryId) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.type, type) || other.type == type) &&
-            (identical(other.icon, icon) || other.icon == icon) &&
-            (identical(other.userId, userId) || other.userId == userId));
+            (identical(other.icon, icon) || other.icon == icon));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, categoryId, name, type, icon, userId);
+  int get hashCode => Object.hash(runtimeType, categoryId, name, icon);
 
   @override
   String toString() {
-    return 'TransactionCategory(categoryId: $categoryId, name: $name, type: $type, icon: $icon, userId: $userId)';
+    return 'TransactionCategory(categoryId: $categoryId, name: $name, icon: $icon)';
   }
 }
 
@@ -185,12 +154,7 @@ abstract mixin class _$TransactionCategoryCopyWith<$Res>
       __$TransactionCategoryCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String categoryId,
-      String name,
-      String type,
-      String icon,
-      String userId});
+  $Res call({String categoryId, String name, String icon});
 }
 
 /// @nodoc
@@ -208,9 +172,7 @@ class __$TransactionCategoryCopyWithImpl<$Res>
   $Res call({
     Object? categoryId = null,
     Object? name = null,
-    Object? type = null,
     Object? icon = null,
-    Object? userId = null,
   }) {
     return _then(_TransactionCategory(
       categoryId: null == categoryId
@@ -221,17 +183,9 @@ class __$TransactionCategoryCopyWithImpl<$Res>
           ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      type: null == type
-          ? _self.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
       icon: null == icon
           ? _self.icon
           : icon // ignore: cast_nullable_to_non_nullable
-              as String,
-      userId: null == userId
-          ? _self.userId
-          : userId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
